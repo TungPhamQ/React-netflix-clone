@@ -5,7 +5,7 @@ import MovieService from "./services/movie.service";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-function Row({ title, fetchUrl }) {
+function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
 
   const fillMovies = (res) => {
@@ -25,11 +25,11 @@ function Row({ title, fetchUrl }) {
   return (
     <div className="row">
       <h3>{title}</h3>
-      <div className="row__posters">
+      <div className={`row__posters ${isLargeRow && "row__posterLarge"} `}>
         {movies.map((movie) => (
           <img
             className="row__poster"
-            src={`${base_url}${movie.poster_path}`}
+            src={`${base_url}${ isLargeRow ? movie.poster_path : movie.backdrop_path}`}
             alt={movie.name}
           />
         ))}

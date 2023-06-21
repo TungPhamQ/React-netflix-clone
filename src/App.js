@@ -1,14 +1,18 @@
 import "./App.css";
 import Row from "./Row";
 import requests from "./requests";
-
+import Banner from "./Banner";
+import Nav from "./Nav";
 function App() {
   return (
     <div className="App">
-      <h1>NETFLIX CLONE</h1>
+      <h1 className="app__name">NETFLIX CLONE</h1>
+      <Nav />
+      <Banner />
       <Row
         title="NETFLIX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
+        isLargeRow
       ></Row>
       <Row title="Trending now" fetchUrl={requests.fetchTrending}></Row>
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated}></Row>
@@ -22,4 +26,3 @@ function App() {
 }
 
 export default App;
- 
