@@ -31,8 +31,8 @@ const Banner = () => {
         backgroundPosition: "center center",
       }}
     >
-      <div className="banner_contents">
-        <h1 className="banner_title">
+      <div className="banner__contents">
+        <h1 className="banner__title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
 

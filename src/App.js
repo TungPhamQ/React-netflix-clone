@@ -6,7 +6,6 @@ import Nav from "./Nav";
 function App() {
   return (
     <div className="App">
-      <h1 className="app__name">NETFLIX CLONE</h1>
       <Nav />
       <Banner />
       <Row
